@@ -19,6 +19,11 @@ const Module = function (selector) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   };
 
+  let taskName;
+  let addTaskBtn;
+  let taskContainer;
+  let clearAllButton;
+
   const createListTemplate = (list) => {
     return `
       <div class="todo-container">
@@ -116,10 +121,6 @@ const Module = function (selector) {
     }
   };
 
-  let taskName;
-  let addTaskBtn;
-  let taskContainer;
-
   function init(name) {
     !localStorage.lists
       ? (lists = [])
@@ -130,7 +131,18 @@ const Module = function (selector) {
     taskName = document.getElementById("add-task");
     addTaskBtn = document.getElementById("add-task-btn");
     taskContainer = document.querySelector(".todo-list");
+    clearAllButton = document.querySelector(".todo-header__remove-btn");
     fillTasks();
+    clearAllButton.addEventListener("click", () => {
+      let ask = confirm("Clear all tasks?");
+      if (ask === true) {
+        tasks = [];
+        updateLocalTasks();
+        fillTasks();
+      } else {
+        return;
+      }
+    });
     addTaskBtn.addEventListener("click", () => {
       if (taskName.value.trim()) {
         tasks.push({ name: taskName.value, completed: false, pinned: false });
@@ -169,17 +181,6 @@ const Module = function (selector) {
       tasks.splice(index, 1);
       updateLocalTasks();
       fillTasks();
-    };
-
-    const cleaAll = () => {
-      let ask = confirm("Clear all tasks?");
-      if (ask === true) {
-        tasks = [];
-        updateLocalTasks();
-        fillTasks();
-      } else {
-        return;
-      }
     };
 
     taskContainer.addEventListener("click", (e) => {
