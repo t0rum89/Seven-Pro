@@ -1,0 +1,56 @@
+/* main css styles */
+
+.parameters {
+  display: flex;
+  justify-content: center;
+}
+
+.parameters__item {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+.parameters__item:last-child {
+  margin-right: 0px;
+}
+
+.parametres__title {
+  margin-right: 5px;
+}
+
+.control-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.table-grid {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.colored {
+  background-color: rgb(102, 43, 141);
+}
+
+/* table css styles */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table tr {
+  height: 30px;
+}
+
+table td {
+  border: 1px solid black;
+  vertical-align: middle;
+  text-align: center;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Task1</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="parameters">
+        <div class="parameters__item">
+          <div class="parametres__title">
+            <p class="parametres__text">Row:</p>
+          </div>
+          <div class="parameters__input">
+            <input
+              id="row-count"
+              type="number"
+              min="1"
+              required
+              placeholder="Row count"
+            />
+          </div>
+        </div>
+        <div class="parameters__item">
+          <div class="parametres__title">
+            <p class="parametres__text">Column:</p>
+          </div>
+          <div class="parameters__input">
+            <input
+              id="column-count"
+              type="number"
+              min="1"
+              required
+              placeholder="Column count"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="control-button">
+        <button class="button">Run</button>
+      </div>
+
+      <div class="table-grid"></div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

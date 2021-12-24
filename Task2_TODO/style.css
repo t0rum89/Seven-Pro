@@ -1,0 +1,160 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #333333;
+  color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header__button {
+  background-color: #ff9902;
+}
+
+.button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.todo-container {
+  width: 300px;
+  background-color: #444444;
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.todo-header__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-header__title {
+  color: #ff9902;
+}
+
+.todo-header__remove-btn {
+  width: 65px;
+}
+
+.todo-header__input {
+  margin-right: 10px;
+}
+
+.todo-header__add-btn {
+  background-color: #ff9902;
+  width: 65px;
+}
+
+.todo-list {
+  padding: 0;
+  list-style: none;
+}
+
+.todo-list__item {
+  background-color: #333333;
+  border: 1px solid #333333;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.todo-list__item:last-child {
+  margin-bottom: 0px;
+}
+
+.element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.element__checkbox {
+  margin-right: 5px;
+  display: none;
+}
+
+.element__checkbox + label::before {
+  content: "\2714";
+  color: transparent;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 15px;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  vertical-align: middle;
+  transition: color ease 0.3s;
+}
+
+.element__checkbox:checked + label::before {
+  color: #ff9902;
+  border-color: #444444;
+}
+
+.element__name {
+  width: 170px;
+  margin-left: 5px;
+  margin-right: 5px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.element__buttons {
+  display: flex;
+  justify-content: left;
+}
+
+.element__pin {
+  margin-right: 5px;
+}
+
+.element__edit {
+  width: 30px;
+  padding: 2px 2px;
+  margin-right: 5px;
+}
+
+.element__del {
+  width: 30px;
+  padding: 2px 2px;
+}
+
+.checked {
+  background-color: #444444;
+  border: 1px solid #444444;
+}
+
+.checked p {
+  text-decoration: line-through;
+}
+
+.pinned {
+  border: 1px solid #ff9902;
+}
